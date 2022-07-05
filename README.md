@@ -34,6 +34,46 @@ def process_words(texts, stop_words=stop_words, allowed_postags=['NOUN', 'ADJ', 
 data_ready = process_words(data_words)  # processed Text Data!
 ```
 
-one of the important things in this project was getting the topic for each one of the tweets, so we started using matrix to return all topics associated with a single tweet.
+One of the important things in this project was getting the topic for each one of the tweets, so we started using matrix to return all topics associated with a single tweet; also choosing an optimal number of topics is an important concern, in this case we can use ```gensim.models.coherencemodel.CoherenceModel```  inside a loop to achieve the best number of topics.
 
-one of the 
+```python
+LDA = gensim.models.ldamodel.LdaModel
+dict_ = corpora.Dictionary(data_words)
+doc_term_matrix=[dict_.doc2bow(i) for i in data_ready]
+coherence = []
+for k in range(2,6):
+    ldaModel = LDA(doc_term_matrix, num_topics=k, id2word=dict_,chunksize=1000, passes=1, random_state=0, update_every=1, eval_every=None)
+        
+    cm = gensim.models.coherencemodel.CoherenceModel(model=ldaModel, texts=data_ready, dictionary=dict_,
+     coherence='c_v')
+    coherence.append((k,cm.get_coherence()))
+x_val = [x[0] for x in coherence]
+y_val = [x[1] for x in coherence]
+maxCoh = max(y_val)
+
+NumOfTopics = 0
+for i in range(4):
+    if y_val[i] == maxCoh:
+        NumOfTopics = i+1
+
+print(NumOfTopics)
+
+```
+
+# Requirements
+Python 3.6+ is required. The following packages are required:
+- [Numpy](https://numpy.org/doc/)
+- [Pandas](https://pandas.pydata.org/docs/)
+- [logging](https://docs.python.org/3/library/logging.html)
+
+
+
+
+
+
+
+
+
+
+
+
