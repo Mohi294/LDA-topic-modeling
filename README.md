@@ -59,6 +59,12 @@ for i in range(4):
 print(NumOfTopics)
 
 ```
+# Gensim lda model parameters
+for more accurate explanations visit this [page](https://radimrehurek.com/gensim/models/ldamodel.html).
+
+alpha and beta are two parameters that were not well discussed, as it is said in this [topic](https://datascience.stackexchange.com/questions/199/what-does-the-alpha-and-beta-hyperparameters-contribute-to-in-latent-dirichlet-a) a low alpha value places more weight on having each document composed of only a few dominant topics (whereas a high value will return many more relatively dominant topics). Similarly, a low beta value places more weight on having each topic composed of only a few dominant words.
+
+for more information on alpha and beta visit this [page](https://www.thoughtvector.io/blog/lda-alpha-and-beta-parameters-the-intuition/).
 
 # Requirements
 Python 3.6+ is required. The following packages are required:
@@ -66,6 +72,8 @@ Python 3.6+ is required. The following packages are required:
 - [Pandas](https://pandas.pydata.org/docs/)
 - [logging](https://docs.python.org/3/library/logging.html)
 
+# Notes
+Latent Dirichlet allocation is described in [Blei et al. (2003)](https://jmlr.org/papers/v3/blei03a.html) and [Pritchard et al. (2000)](https://academic.oup.com/genetics/article/155/2/945/6048111). 
 
 
 
