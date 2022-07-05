@@ -84,6 +84,8 @@ Latent Dirichlet allocation is described in [Blei et al. (2003)](https://jmlr.or
 - [scikit-learn](https://scikit-learn.org/stable/)'s [LatentDirichletAllocation](https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html) (uses online variational inference)
 - [lda](https://pypi.org/project/lda/)
 
+# License
+Gensim is licensed under the OSI-approved GNU LGPLv2. 1 license.
 
 
 
