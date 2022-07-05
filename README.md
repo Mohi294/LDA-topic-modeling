@@ -75,6 +75,14 @@ Python 3.6+ is required. The following packages are required:
 # Notes
 Latent Dirichlet allocation is described in [Blei et al. (2003)](https://jmlr.org/papers/v3/blei03a.html) and [Pritchard et al. (2000)](https://academic.oup.com/genetics/article/155/2/945/6048111). 
 
+# important links
+- Documentation: https://radimrehurek.com/gensim/
+- Source code: https://github.com/Mohi294/LDA-topic-modeling/
+- Issue tracker: https://github.com/Mohi294/LDA-topic-modeling/issues
+
+# Other implementations
+- [scikit-learn](https://scikit-learn.org/stable/)'s [LatentDirichletAllocation](https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html) (uses online variational inference)
+- [lda](https://pypi.org/project/lda/)
 
 
 
